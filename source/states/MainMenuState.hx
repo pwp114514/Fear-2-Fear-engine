@@ -2,7 +2,6 @@ package states;
 
 import backend.WeekData;
 import backend.Achievements;
-import openfl.Assets;
 
 import flixel.FlxObject;
 import flixel.addons.transition.FlxTransitionableState;
@@ -14,8 +13,10 @@ import lime.app.Application;
 import objects.AchievementPopup;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
-import flxgif.FlxGifSprite;
-
+import openfl.Assets;
+import flash.display.Sprite;
+import gif.AnimatedGif;
+import haxe.io.Bytes;
 
 class MainMenuState extends MusicBeatState
 {
@@ -39,6 +40,19 @@ class MainMenuState extends MusicBeatState
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 
+	public function new () 
+	{		
+		super ();
+		var bytes:Bytes=Bytes.ofString(Assets.getText("images/p2p.gif"));
+		var gif1=new AnimatedGif(bytes);
+		this.addChild(gif1);
+		gif1.y=100; gif1.x=200;
+		gif1.play();
+		gif1.rotation=32;
+
+		bytes=haxe.io.Bytes.ofString(Assets.getText("images/p2p.gif"));
+		this.addChild(new AnimatedGif(bytes).play());
+	}
 	override function create()
 	{
 		#if MODS_ALLOWED
@@ -76,12 +90,6 @@ class MainMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
-		var p2p:FlxGifSprite = new FlxGifSprite(0, 0);
-		p2p.loadGif(Assets.getText("p2p.gif"));
-		p2p.screenCenter();
-		p2p.antialiasing = true;
-		add(p2p);
-		
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
 		magenta.scrollFactor.set(0, yScroll);

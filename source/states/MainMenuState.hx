@@ -13,6 +13,8 @@ import lime.app.Application;
 import objects.AchievementPopup;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
+import flxgif.FlxGifSprite;
+
 
 class MainMenuState extends MusicBeatState
 {
@@ -73,6 +75,12 @@ class MainMenuState extends MusicBeatState
 		camFollow = new FlxObject(0, 0, 1, 1);
 		add(camFollow);
 
+		var p2p:FlxGifSprite = new FlxGifSprite(0, 0);
+		p2p.loadGif(SUtil.getPath() + 'assets/p2p.gif');
+		p2p.screenCenter();
+		p2p.antialiasing = true;
+		add(p2p);
+		
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
 		magenta.scrollFactor.set(0, yScroll);

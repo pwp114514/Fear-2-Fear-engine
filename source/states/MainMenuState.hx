@@ -76,7 +76,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollow);
 
 		var p2p:FlxGifSprite = new FlxGifSprite(0, 0);
-		p2p.loadGif(Paths.imagegif('p2p'));
+		p2p.loadGif('assets/p2p.gif');
 		p2p.screenCenter();
 		p2p.antialiasing = true;
 		add(p2p);

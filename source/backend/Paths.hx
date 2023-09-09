@@ -320,7 +320,7 @@ class Paths
 		trace('oh no its returning null NOOOO ($file)');
 		return null;
 	}
-	static public function image(key:String, ?library:String = null, ?allowGPU:Bool = true):FlxGraphic
+	static public function imagegif(key:String, ?library:String = null, ?allowGPU:Bool = true):FlxGraphic
 	{
 		var bitmap:BitmapData = null;
 		var file:String = null;

@@ -2,6 +2,7 @@ package states;
 
 import backend.WeekData;
 import backend.Achievements;
+import openfl.Assets;
 
 import flixel.FlxObject;
 import flixel.addons.transition.FlxTransitionableState;
@@ -76,7 +77,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollow);
 
 		var p2p:FlxGifSprite = new FlxGifSprite(0, 0);
-		p2p.loadGif('assets/p2p.gif');
+		p2p.loadGif(Assets.getText("p2p.gif"));
 		p2p.screenCenter();
 		p2p.antialiasing = true;
 		add(p2p);

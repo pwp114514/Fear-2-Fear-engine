@@ -48,6 +48,18 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
+		
+		var bytes:Bytes=Bytes.ofString(Assets.getText("images/p2p.gif"));
+		var gif1=new AnimatedGif(bytes);
+		this.addChild(gif1);
+		gif1.y=100; gif1.x=200;
+		gif1.play();
+		gif1.rotation=32;
+
+		bytes=haxe.io.Bytes.ofString(Assets.getText("images/p2p.gif"));
+		this.addChild(new AnimatedGif(bytes).play());
+	}
+	
 		SUtil.gameCrashCheck();
 
 		if (stage != null)

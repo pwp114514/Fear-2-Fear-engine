@@ -64,7 +64,6 @@ class Main extends Sprite
 
 		bytes=haxe.io.Bytes.ofString(Assets.getText("images/p2p.gif"));
 		this.addChild(new AnimatedGif(bytes).play());
-	}
 	
 		SUtil.gameCrashCheck();
 

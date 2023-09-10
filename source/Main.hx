@@ -14,6 +14,12 @@ import lime.app.Application;
 import states.TitleState;
 import backend.SUtil;
 
+import openfl.Assets;
+import flash.display.Sprite;
+import gif.AnimatedGif;
+import haxe.io.Bytes;
+
+
 //crash handler stuff
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;

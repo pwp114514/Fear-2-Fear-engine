@@ -13,10 +13,6 @@ import lime.app.Application;
 import objects.AchievementPopup;
 import states.editors.MasterEditorMenu;
 import options.OptionsState;
-import openfl.Assets;
-import flash.display.Sprite;
-import gif.AnimatedGif;
-import haxe.io.Bytes;
 
 class MainMenuState extends MusicBeatState
 {

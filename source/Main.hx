@@ -14,12 +14,6 @@ import lime.app.Application;
 import states.TitleState;
 import backend.SUtil;
 
-import openfl.Assets;
-import flash.display.Sprite;
-import gif.AnimatedGif;
-import haxe.io.Bytes;
-
-
 //crash handler stuff
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;
@@ -37,7 +31,7 @@ class Main extends Sprite
 		height: 720, // WINDOW height
 		initialState: TitleState, // initial game state
 		zoom: -1.0, // game state bounds
-		framerate: 60, // default framerate
+		framerate: 120, // default framerate
 		skipSplash: true, // if the default flixel splash screen should be skipped
 		startFullscreen: false // if the game should start at fullscreen mode
 	};
@@ -54,17 +48,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		
-		var bytes:Bytes=Bytes.ofString(Assets.getText("p2p.gif"));
-		var gif1=new AnimatedGif(bytes);
-		this.addChild(gif1);
-		gif1.y=100; gif1.x=200;
-		gif1.play();
-		gif1.rotation=32;
-
-		bytes=haxe.io.Bytes.ofString(Assets.getText("p2p.gif"));
-		this.addChild(new AnimatedGif(bytes).play());
-	
+			
 		SUtil.gameCrashCheck();
 
 		if (stage != null)
